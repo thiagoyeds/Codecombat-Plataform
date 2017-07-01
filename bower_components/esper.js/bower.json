@@ -1,0 +1,29 @@
+{
+  "name": "esper.js",
+  "description": "Esper javascript interperter.",
+  "authors": [
+    "Rob Blanckaert"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "esper",
+    "javascript",
+    "interperter",
+    "ast",
+    "eval"
+  ],
+  "homepage": "http://esper.basicer.com",
+  "main": [
+    "esper.js"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "toybox",
+    "contrib",
+    "tests"
+  ]
+}

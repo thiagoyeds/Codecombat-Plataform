@@ -1,0 +1,39 @@
+{
+  "name": "esper.js",
+  "description": "Esper javascript interperter.",
+  "authors": [
+    "Rob Blanckaert"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "esper",
+    "javascript",
+    "interperter",
+    "ast",
+    "eval"
+  ],
+  "homepage": "http://esper.basicer.com",
+  "main": [
+    "esper.js"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "toybox",
+    "contrib",
+    "tests"
+  ],
+  "_cacheHeaders": {
+    "ETag": "\"c98559c0815c5eae6f39e3c9fd7e3a25\"",
+    "Last-Modified": "Thu, 19 Jan 2017 20:45:43 GMT",
+    "Content-Length": "338129",
+    "Content-Type": "application/x-gzip"
+  },
+  "_release": "e-tag:c98559c08",
+  "_source": "http://files.codecombat.com/esper.tar.gz",
+  "_target": "*",
+  "_originalSource": "http://files.codecombat.com/esper.tar.gz"
+}

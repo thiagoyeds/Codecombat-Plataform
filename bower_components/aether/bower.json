@@ -1,0 +1,31 @@
+{
+  "name": "aether",
+  "version": "0.5.39",
+  "homepage": "https://github.com/codecombat/aether",
+  "authors": [
+    "CodeCombat <team@codecombat.com>"
+  ],
+  "description": "Analyzes, instruments, and transpiles JS to help beginners.",
+  "main": "build/aether.js",
+  "keywords": [
+    "lint",
+    "static",
+    "analysis",
+    "transpiler",
+    "learning",
+    "programming"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "src",
+    "lib",
+    "build/test",
+    "build/dev",
+    "build/index.html",
+    "Gruntfile.coffee",
+    "plan.md"
+  ]
+}

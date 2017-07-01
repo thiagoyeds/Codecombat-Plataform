@@ -1,0 +1,27 @@
+{
+  "name": "algolia-autocomplete-no-conflict",
+  "authors": [
+    "Rob <rob@codecombat.com>"
+  ],
+  "description": "",
+  "version": "1.0.0",
+  "main": "no-conflict.js",
+  "license": "MIT",
+  "homepage": "https://github.com/basicer/algolia-autocomplete-no-conflict",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "b3f33200bacdeecb49798f08ef051aff945c1c86"
+  },
+  "_source": "https://github.com/basicer/algolia-autocomplete-no-conflict.git",
+  "_target": "1.0.0",
+  "_originalSource": "algolia-autocomplete-no-conflict"
+}

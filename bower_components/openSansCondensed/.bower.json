@@ -1,0 +1,14 @@
+{
+  "name": "openSansCondensed",
+  "main": [
+    "*.ttf",
+    "*.css"
+  ],
+  "_cacheHeaders": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=openSansCondensed.zip"
+  },
+  "_source": "https://google-fonts.azurewebsites.net/googleFonts/openSansCondensed?family=Open+Sans+Condensed:700&subset=latin,latin-ext,cyrillic-ext,greek-ext,greek,vietnamese,cyrillic",
+  "_target": "*",
+  "_originalSource": "https://google-fonts.azurewebsites.net/googleFonts/openSansCondensed?family=Open+Sans+Condensed:700&subset=latin,latin-ext,cyrillic-ext,greek-ext,greek,vietnamese,cyrillic"
+}

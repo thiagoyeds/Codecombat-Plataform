@@ -1,0 +1,1 @@
+window.aetherJSHint = require('jshint');

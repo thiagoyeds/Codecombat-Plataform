@@ -1,0 +1,30 @@
+{
+  "name": "i18next",
+  "version": "1.7.9",
+  "main": "./i18next.js",
+  "dependencies": {},
+  "ignore": [
+    "test/",
+    "release/",
+    "spec/",
+    "src/",
+    "sample/",
+    "report/",
+    "buildtasks/",
+    ".gitignore",
+    "Gruntfile.js",
+    "package.json",
+    "testacular.conf.js",
+    "**/*.zip"
+  ],
+  "homepage": "https://github.com/nwinter/i18next",
+  "_release": "1.7.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.7.9",
+    "commit": "6be6d611fbba6cfa2823027c7d3c7845de11c0d9"
+  },
+  "_source": "https://github.com/nwinter/i18next.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/nwinter/i18next.git"
+}
