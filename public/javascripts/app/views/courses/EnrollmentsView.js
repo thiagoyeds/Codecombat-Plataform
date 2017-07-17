@@ -30,20 +30,7 @@ buf.push("<hr/><em class=\"small-details\"><div data-i18n=\"teacher.start_date\"
 };
 var accountLinks_mixin = function(){
 var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
-buf.push("<li><a" + (jade.attrs({ 'href':("/user/" + (me.getSlugOrID()) + ""), 'data-i18n':("nav.profile") }, {"href":true,"data-i18n":true})) + "></a></li><li><a href=\"/account/settings\" data-i18n=\"play.settings\"></a></li>");
-if ( me.isAdmin() || !(me.isTeacher() || me.isStudent()))
-{
-buf.push("<li><a href=\"/account/payments\" data-i18n=\"account.payments\"></a></li>");
-}
-if ( me.isAdmin() || !(me.isTeacher() || me.isStudent()) || me.hasSubscription())
-{
-buf.push("<li><a href=\"/account/subscription\" data-i18n=\"account.subscription\"></a></li>");
-}
-if ( me.isAdmin() || !(me.isTeacher() || me.isStudent()))
-{
-buf.push("<li><a href=\"/account/prepaid\" data-i18n=\"account.prepaid_codes\"></a></li>");
-}
-buf.push("<li><a id=\"logout-button\" data-i18n=\"login.log_out\"></a></li>");
+buf.push("<li><a" + (jade.attrs({ 'href':("/user/" + (me.getSlugOrID()) + ""), 'data-i18n':("nav.profile") }, {"href":true,"data-i18n":true})) + "></a></li><li><a href=\"/account/settings\" data-i18n=\"play.settings\"></a></li><li><a id=\"logout-button\" data-i18n=\"login.log_out\"></a></li>");
 };
 buf.push("<div class=\"style-flat\"><nav id=\"main-nav\" class=\"navbar navbar-default\"><div class=\"container-fluid container\"><div class=\"row\"><div class=\"col-md-12\"><div class=\"navbar-header\"><button data-toggle=\"collapse\" data-target=\"#navbar-collapse\" aria-expanded=\"false\" class=\"navbar-toggle collapsed\"><span data-i18n=\"nav.toggle_nav\" class=\"sr-only\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button><a href=\"/\" class=\"navbar-brand\">");
 if ( serverConfig.codeNinjas)
@@ -54,7 +41,12 @@ else
 {
 buf.push("<img id=\"logo-img\" src=\"/images/pages/base/logo.png\"/>");
 }
-buf.push("<span class=\"glyphicon glyphicon-home\"></span></a></div><div id=\"navbar-collapse\" class=\"collapse navbar-collapse\"><ul class=\"nav navbar-nav\"><li><a href=\"/about\" data-i18n=\"nav.about\"></a></li>");
+buf.push("<span class=\"glyphicon glyphicon-home\"></span></a></div><div id=\"navbar-collapse\" class=\"collapse navbar-collapse\"><ul class=\"nav navbar-nav\">");
+if ( (!me.isStudent() && !me.isTeacher()))
+{
+buf.push("<li><a href=\"/play\" data-i18n=\"common.play\"></a></li>");
+}
+buf.push("<li><a href=\"play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a></li>");
 if ( me.isStudent())
 {
 buf.push("<li><a href=\"/students\" data-i18n=\"nav.my_courses\"></a></li>");
@@ -63,11 +55,7 @@ if ( !me.isAnonymous() && me.isTeacher())
 {
 buf.push("<li><a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a></li>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<li><a href=\"/play\" data-i18n=\"common.play\"></a></li><li><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a></li>");
-}
-buf.push("</ul>");
+buf.push("<li><a href=\"/about\" data-i18n=\"nav.about\"></a></li><li><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a></li></ul>");
 if ( me.isAnonymous())
 {
 buf.push("<ul class=\"nav navbar-nav\"><li><a id=\"create-account-link\" data-i18n=\"login.sign_up\" class=\"signup-button\"></a></li><li><a id=\"login-link\" data-i18n=\"login.log_in\" class=\"login-button\"></a></li></ul>");

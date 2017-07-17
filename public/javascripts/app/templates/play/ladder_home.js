@@ -5,7 +5,7 @@ var buf = [];
 var locals_ = (locals || {}),features = locals_.features,me = locals_.me,view = locals_.view,usesSocialMedia = locals_.usesSocialMedia,isIE = locals_.isIE,fbRef = locals_.fbRef;buf.push("<div id=\"site-nav\"><a href=\"/\"><img id=\"nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><div id=\"site-nav-links\"><a href=\"/\"><img id=\"small-nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><a href=\"/\"><span class=\"glyphicon glyphicon-home\"></span></a>");
 if ( !features.playViewsOnly)
 {
-buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a>");
+buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a href=\"/play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a>");
 if ( me.isStudent())
 {
 buf.push("<a href=\"/students\" data-i18n=\"nav.my_courses\"></a>");
@@ -14,11 +14,7 @@ if ( me.isTeacher())
 {
 buf.push("<a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a>");
-}
-buf.push("<a href=\"/community\" data-i18n=\"nav.community\"></a>");
+buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a><a href=\"/community\" data-i18n=\"nav.community\"></a>");
 if ( me.get('anonymous') === false)
 {
 buf.push("<span class=\"dropdown\"><button href=\"#\" data-toggle=\"dropdown\" class=\"btn btn-sm header-font dropdown-toggle\">");
@@ -68,6 +64,8 @@ buf.push("<div class=\"campaign-container\"><h1><a" + (jade.attrs({ 'href':("/pl
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -114,6 +112,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   } else {
@@ -121,6 +120,8 @@ buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\
     for (var $index in $$obj) {
       $$l++;      var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -167,6 +168,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   }
@@ -189,6 +191,8 @@ buf.push("<div class=\"campaign-container\"><h1><a" + (jade.attrs({ 'href':("/pl
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -235,6 +239,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   } else {
@@ -242,6 +247,8 @@ buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\
     for (var $index in $$obj) {
       $$l++;      var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -288,6 +295,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   }

@@ -1,22 +1,6 @@
 form#basic-info-form.modal-body.basic-info
   .modal-body-content
-    .auth-network-logins.text-center
-      h4
-        span(data-i18n="teachers_quote.connect_with")
-      a#facebook-signup-btn.btn.btn-primary.btn-lg.btn-illustrated.network-login(disabled=!view.signupState.get('facebookEnabled'), data-sso-used="facebook")
-        img.network-logo(src="/images/pages/modal/auth/facebook_sso_button.png", draggable="false", width="175", height="40")
-        span.sign-in-blurb(data-i18n="login.sign_in_with_facebook")
-      a#gplus-signup-btn.btn.btn-danger.btn-lg.btn-illustrated.network-login(disabled=!view.signupState.get('gplusEnabled'), data-sso-used="gplus")
-        img.network-logo(src="/images/pages/modal/auth/gplus_sso_button.png", draggable="false", width="175", height="40")
-        span.sign-in-blurb(data-i18n="login.sign_in_with_gplus")
-        .gplus-login-wrapper
-          .gplus-login-button
-
-    .hr-text
-      hr
-      span(data-i18n="general.or")
-
-    div.form-container
+    .form-container
       if ['student', 'teacher'].indexOf(view.signupState.get('path')) !== -1
         .row.full-name
           .col-xs-offset-3.col-xs-5

@@ -30127,7 +30127,7 @@ if (typeof define === 'function' && define.amd) {
 var __templateData = function anonymous(locals
 /**/) {
 var buf = [];
-var locals_ = (locals || {}),view = locals_.view;buf.push("<form id=\"basic-info-form\" class=\"modal-body basic-info\"><div class=\"modal-body-content\"><div class=\"auth-network-logins text-center\"><h4><span data-i18n=\"teachers_quote.connect_with\"></span></h4><a" + (jade.attrs({ 'id':('facebook-signup-btn'), 'disabled':(!view.signupState.get('facebookEnabled')), 'data-sso-used':("facebook"), "class": [('btn'),('btn-primary'),('btn-lg'),('btn-illustrated'),('network-login')] }, {"disabled":true,"data-sso-used":true})) + "><img src=\"/images/pages/modal/auth/facebook_sso_button.png\" draggable=\"false\" width=\"175\" height=\"40\" class=\"network-logo\"/><span data-i18n=\"login.sign_in_with_facebook\" class=\"sign-in-blurb\"></span></a><a" + (jade.attrs({ 'id':('gplus-signup-btn'), 'disabled':(!view.signupState.get('gplusEnabled')), 'data-sso-used':("gplus"), "class": [('btn'),('btn-danger'),('btn-lg'),('btn-illustrated'),('network-login')] }, {"disabled":true,"data-sso-used":true})) + "><img src=\"/images/pages/modal/auth/gplus_sso_button.png\" draggable=\"false\" width=\"175\" height=\"40\" class=\"network-logo\"/><span data-i18n=\"login.sign_in_with_gplus\" class=\"sign-in-blurb\"></span><div class=\"gplus-login-wrapper\"><div class=\"gplus-login-button\"></div></div></a></div><div class=\"hr-text\"><hr/><span data-i18n=\"general.or\"></span></div><div class=\"form-container\">");
+var locals_ = (locals || {}),view = locals_.view;buf.push("<form id=\"basic-info-form\" class=\"modal-body basic-info\"><div class=\"modal-body-content\"><div class=\"form-container\">");
 if ( ['student', 'teacher'].indexOf(view.signupState.get('path')) !== -1)
 {
 buf.push("<div class=\"row full-name\"><div class=\"col-xs-offset-3 col-xs-5\"><div class=\"form-group\"><label for=\"first-name-input\" class=\"control-label\"><span data-i18n=\"general.first_name\"></span></label><input id=\"first-name-input\" name=\"firstName\" class=\"form-control input-lg\"/></div></div><div class=\"col-xs-4\"><div class=\"last-initial form-group\"><label for=\"last-name-input\" class=\"control-label\"><span data-i18n=\"general.last_initial\"></span></label><input id=\"last-name-input\" name=\"lastName\" maxlength=\"1\" class=\"form-control input-lg\"/></div></div></div>");
@@ -30864,7 +30864,7 @@ var buf = [];
 var locals_ = (locals || {}),features = locals_.features,me = locals_.me,view = locals_.view,usesSocialMedia = locals_.usesSocialMedia,isIE = locals_.isIE,fbRef = locals_.fbRef;buf.push("<div id=\"site-nav\"><a href=\"/\"><img id=\"nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><div id=\"site-nav-links\"><a href=\"/\"><img id=\"small-nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><a href=\"/\"><span class=\"glyphicon glyphicon-home\"></span></a>");
 if ( !features.playViewsOnly)
 {
-buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a>");
+buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a href=\"/play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a>");
 if ( me.isStudent())
 {
 buf.push("<a href=\"/students\" data-i18n=\"nav.my_courses\"></a>");
@@ -30873,11 +30873,7 @@ if ( me.isTeacher())
 {
 buf.push("<a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a>");
-}
-buf.push("<a href=\"/community\" data-i18n=\"nav.community\"></a>");
+buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a><a href=\"/community\" data-i18n=\"nav.community\"></a>");
 if ( me.get('anonymous') === false)
 {
 buf.push("<span class=\"dropdown\"><button href=\"#\" data-toggle=\"dropdown\" class=\"btn btn-sm header-font dropdown-toggle\">");
@@ -31069,7 +31065,7 @@ if (typeof define === 'function' && define.amd) {
 var __templateData = function anonymous(locals
 /**/) {
 var buf = [];
-var locals_ = (locals || {}),me = locals_.me,view = locals_.view,serverConfig = locals_.serverConfig,i18n = locals_.i18n;var box_mixin = function(){
+var locals_ = (locals || {}),me = locals_.me,view = locals_.view,serverConfig = locals_.serverConfig;var box_mixin = function(){
 var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
 buf.push("<div class=\"well text-center\">");
 if ( me.isAnonymous() == true)
@@ -31106,20 +31102,7 @@ buf.push("<div id=\"ideal-tickets-well\" class=\"well text-center hidden-xs hidd
 };
 var accountLinks_mixin = function(){
 var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
-buf.push("<li><a" + (jade.attrs({ 'href':("/user/" + (me.getSlugOrID()) + ""), 'data-i18n':("nav.profile") }, {"href":true,"data-i18n":true})) + "></a></li><li><a href=\"/account/settings\" data-i18n=\"play.settings\"></a></li>");
-if ( me.isAdmin() || !(me.isTeacher() || me.isStudent()))
-{
-buf.push("<li><a href=\"/account/payments\" data-i18n=\"account.payments\"></a></li>");
-}
-if ( me.isAdmin() || !(me.isTeacher() || me.isStudent()) || me.hasSubscription())
-{
-buf.push("<li><a href=\"/account/subscription\" data-i18n=\"account.subscription\"></a></li>");
-}
-if ( me.isAdmin() || !(me.isTeacher() || me.isStudent()))
-{
-buf.push("<li><a href=\"/account/prepaid\" data-i18n=\"account.prepaid_codes\"></a></li>");
-}
-buf.push("<li><a id=\"logout-button\" data-i18n=\"login.log_out\"></a></li>");
+buf.push("<li><a" + (jade.attrs({ 'href':("/user/" + (me.getSlugOrID()) + ""), 'data-i18n':("nav.profile") }, {"href":true,"data-i18n":true})) + "></a></li><li><a href=\"/account/settings\" data-i18n=\"play.settings\"></a></li><li><a id=\"logout-button\" data-i18n=\"login.log_out\"></a></li>");
 };
 buf.push("<div class=\"style-flat\"><nav id=\"main-nav\" class=\"navbar navbar-default\"><div class=\"container-fluid container\"><div class=\"row\"><div class=\"col-md-12\"><div class=\"navbar-header\"><button data-toggle=\"collapse\" data-target=\"#navbar-collapse\" aria-expanded=\"false\" class=\"navbar-toggle collapsed\"><span data-i18n=\"nav.toggle_nav\" class=\"sr-only\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button><a href=\"/\" class=\"navbar-brand\">");
 if ( serverConfig.codeNinjas)
@@ -31130,7 +31113,12 @@ else
 {
 buf.push("<img id=\"logo-img\" src=\"/images/pages/base/logo.png\"/>");
 }
-buf.push("<span class=\"glyphicon glyphicon-home\"></span></a></div><div id=\"navbar-collapse\" class=\"collapse navbar-collapse\"><ul class=\"nav navbar-nav\"><li><a href=\"/about\" data-i18n=\"nav.about\"></a></li>");
+buf.push("<span class=\"glyphicon glyphicon-home\"></span></a></div><div id=\"navbar-collapse\" class=\"collapse navbar-collapse\"><ul class=\"nav navbar-nav\">");
+if ( (!me.isStudent() && !me.isTeacher()))
+{
+buf.push("<li><a href=\"/play\" data-i18n=\"common.play\"></a></li>");
+}
+buf.push("<li><a href=\"play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a></li>");
 if ( me.isStudent())
 {
 buf.push("<li><a href=\"/students\" data-i18n=\"nav.my_courses\"></a></li>");
@@ -31139,11 +31127,7 @@ if ( !me.isAnonymous() && me.isTeacher())
 {
 buf.push("<li><a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a></li>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<li><a href=\"/play\" data-i18n=\"common.play\"></a></li><li><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a></li>");
-}
-buf.push("</ul>");
+buf.push("<li><a href=\"/about\" data-i18n=\"nav.about\"></a></li><li><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a></li></ul>");
 if ( me.isAnonymous())
 {
 buf.push("<ul class=\"nav navbar-nav\"><li><a id=\"create-account-link\" data-i18n=\"login.sign_up\" class=\"signup-button\"></a></li><li><a id=\"login-link\" data-i18n=\"login.log_in\" class=\"login-button\"></a></li></ul>");
@@ -31182,165 +31166,7 @@ if ( me.isAnonymous())
 buf.push("<div class=\"have-an-account\"><span data-i18n=\"new_home.have_an_account\" class=\"spr\"></span><a data-i18n=\"login.log_in\" class=\"login-button\"></a></div>");
 }
 }
-buf.push("</div><h3 data-i18n=\"new_home.computer_science\" class=\"text-center\"></h3><h4 class=\"text-center\"><span id=\"school-level-label\" data-i18n=\"new_home.show_me_lesson_time\"></span><select id=\"school-level-dropdown\" class=\"form-control text-navy\"><option value=\"elementary\" data-i18n=\"teachers_quote.elementary_school\"></option><option value=\"middle\" selected=\"selected\" data-i18n=\"teachers_quote.middle_school\"></option><option value=\"high\" data-i18n=\"teachers_quote.high_school\"></option></select></h4><h5 id=\"total-hours-header\" class=\"text-center\"><span data-i18n=\"new_home.curriculum\" class=\"spr\"></span><span id=\"semester-duration\"></span></h5><div id=\"courses-row\" class=\"row\">");
-var conceptsSeen = {};
-// iterate view.courses.models
-;(function(){
-  var $$obj = view.courses.models;
-  if ('number' == typeof $$obj.length) {
-
-    for (var courseIndex = 0, $$l = $$obj.length; courseIndex < $$l; courseIndex++) {
-      var course = $$obj[courseIndex];
-
-buf.push("<div class=\"col-md-3 col-sm-4\"><div" + (jade.attrs({ 'data-course-slug':(course.get('slug')), "class": [('media'),('course-details')] }, {"data-course-slug":true})) + ">");
-if ( courseIndex === 0)
-{
-buf.push("<div class=\"free-course\"><h6 data-i18n=\"new_home.ffa\"></h6></div>");
-}
-buf.push("<div" + (jade.attrs({ 'title':(i18n(course.attributes, 'description')), "class": [('media-body')] }, {"title":true})) + "><h6 class=\"course-name\">" + (jade.escape(null == (jade.interp = i18n(course.attributes, 'name') + ':') ? "" : jade.interp)) + "</h6><p class=\"small\">");
-var total = 0;
-// iterate course.get('concepts') || []
-;(function(){
-  var $$obj = course.get('concepts') || [];
-  if ('number' == typeof $$obj.length) {
-
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var concept = $$obj[$index];
-
-if (conceptsSeen[concept]) continue;
-conceptsSeen[concept] = true;
-if ( total === 3)
-{
-total += 1;
-buf.push("<span>...</span>");
-continue;
-}
-else if ( total > 3)
-{
-continue;
-}
-else if ( total > 0)
-{
-buf.push("<span class=\"spr\">,</span>");
-}
-total += 1;
-buf.push("<span" + (jade.attrs({ 'data-i18n':("concepts." + concept) }, {"data-i18n":true})) + "></span>");
-    }
-
-  } else {
-    var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var concept = $$obj[$index];
-
-if (conceptsSeen[concept]) continue;
-conceptsSeen[concept] = true;
-if ( total === 3)
-{
-total += 1;
-buf.push("<span>...</span>");
-continue;
-}
-else if ( total > 3)
-{
-continue;
-}
-else if ( total > 0)
-{
-buf.push("<span class=\"spr\">,</span>");
-}
-total += 1;
-buf.push("<span" + (jade.attrs({ 'data-i18n':("concepts." + concept) }, {"data-i18n":true})) + "></span>");
-    }
-
-  }
-}).call(this);
-
-if ( total === 0)
-{
-buf.push("<span>" + (jade.escape(null == (jade.interp = course.get('description')) ? "" : jade.interp)) + "</span>");
-}
-buf.push("</p></div><img" + (jade.attrs({ 'src':("/images/pages/home/" + course.get('slug') + ".png"), "class": [('media-object')] }, {"src":true})) + "/><h6 class=\"course-duration\"><span data-i18n=\"new_home.lesson_time\" class=\"spr\"></span><span class=\"course-hours\">" + (jade.escape(null == (jade.interp = course.get('duration') || 0) ? "" : jade.interp)) + "</span><span data-i18n=\"units.hours\" class=\"spl unit\"></span></h6></div></div>");
-    }
-
-  } else {
-    var $$l = 0;
-    for (var courseIndex in $$obj) {
-      $$l++;      var course = $$obj[courseIndex];
-
-buf.push("<div class=\"col-md-3 col-sm-4\"><div" + (jade.attrs({ 'data-course-slug':(course.get('slug')), "class": [('media'),('course-details')] }, {"data-course-slug":true})) + ">");
-if ( courseIndex === 0)
-{
-buf.push("<div class=\"free-course\"><h6 data-i18n=\"new_home.ffa\"></h6></div>");
-}
-buf.push("<div" + (jade.attrs({ 'title':(i18n(course.attributes, 'description')), "class": [('media-body')] }, {"title":true})) + "><h6 class=\"course-name\">" + (jade.escape(null == (jade.interp = i18n(course.attributes, 'name') + ':') ? "" : jade.interp)) + "</h6><p class=\"small\">");
-var total = 0;
-// iterate course.get('concepts') || []
-;(function(){
-  var $$obj = course.get('concepts') || [];
-  if ('number' == typeof $$obj.length) {
-
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var concept = $$obj[$index];
-
-if (conceptsSeen[concept]) continue;
-conceptsSeen[concept] = true;
-if ( total === 3)
-{
-total += 1;
-buf.push("<span>...</span>");
-continue;
-}
-else if ( total > 3)
-{
-continue;
-}
-else if ( total > 0)
-{
-buf.push("<span class=\"spr\">,</span>");
-}
-total += 1;
-buf.push("<span" + (jade.attrs({ 'data-i18n':("concepts." + concept) }, {"data-i18n":true})) + "></span>");
-    }
-
-  } else {
-    var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var concept = $$obj[$index];
-
-if (conceptsSeen[concept]) continue;
-conceptsSeen[concept] = true;
-if ( total === 3)
-{
-total += 1;
-buf.push("<span>...</span>");
-continue;
-}
-else if ( total > 3)
-{
-continue;
-}
-else if ( total > 0)
-{
-buf.push("<span class=\"spr\">,</span>");
-}
-total += 1;
-buf.push("<span" + (jade.attrs({ 'data-i18n':("concepts." + concept) }, {"data-i18n":true})) + "></span>");
-    }
-
-  }
-}).call(this);
-
-if ( total === 0)
-{
-buf.push("<span>" + (jade.escape(null == (jade.interp = course.get('description')) ? "" : jade.interp)) + "</span>");
-}
-buf.push("</p></div><img" + (jade.attrs({ 'src':("/images/pages/home/" + course.get('slug') + ".png"), "class": [('media-object')] }, {"src":true})) + "/><h6 class=\"course-duration\"><span data-i18n=\"new_home.lesson_time\" class=\"spr\"></span><span class=\"course-hours\">" + (jade.escape(null == (jade.interp = course.get('duration') || 0) ? "" : jade.interp)) + "</span><span data-i18n=\"units.hours\" class=\"spl unit\"></span></h6></div></div>");
-    }
-
-  }
-}).call(this);
-
-buf.push("<div class=\"col-md-3 col-sm-4\"><div class=\"media disabled\"><div class=\"media-body\"><p data-i18n=\"new_home.coming_soon\" class=\"small\"></p></div><img src=\"/images/pages/home/inprogress.png\" class=\"media-object\"/></div></div><div class=\"clearfix\"></div><div class=\"text-center\"><h4><img src=\"/images/pages/about/new_languages.png\"/><div data-i18n=\"new_home.courses_available_in\"></div></h4></div></div><div class=\"testimonials-rows\"><div class=\"testimonials-filler-left\"></div><div class=\"testimonials-filler-right\"></div><div class=\"row\"><div class=\"col-lg-offset-2 col-lg-7 col-sm-8\"><blockquote><h3 data-i18n=\"new_home.boast\"></h3></blockquote></div><div class=\"col-lg-2 col-sm-3 text-center\"><img src=\"/images/pages/home/opensource.png\" class=\"img-circle\"/><h6>Open Source</h6><div class=\"small\">opensource.com</div></div></div><div class=\"row\"><div class=\"col-lg-7 col-sm-8 col-sm-push-4 col-lg-push-3\"><blockquote><h3 data-i18n=\"new_home.winning\"></h3></blockquote></div><div class=\"col-lg-2 col-sm-3 col-lg-offset-1 text-center col-sm-pull-8 col-lg-pull-7\"><img src=\"/images/pages/home/pcmag.png\" class=\"img-circle\"/><h6>PC Mag</h6><div class=\"small\">pcmag.com</div></div></div></div><div class=\"request-demo-row text-center\"><h3 data-i18n=\"new_home.run_class\"></h3>");
+buf.push("</div><div class=\"testimonials-rows\"><div class=\"testimonials-filler-left\"></div><div class=\"testimonials-filler-right\"></div><div class=\"row\"><div class=\"col-lg-offset-2 col-lg-7 col-sm-8\"><blockquote><h3 data-i18n=\"new_home.boast\"></h3></blockquote></div><div class=\"col-lg-2 col-sm-3 text-center\"><img src=\"/images/pages/home/opensource.png\" class=\"img-circle\"/><h6>Open Source</h6><div class=\"small\">opensource.com</div></div></div><div class=\"row\"><div class=\"col-lg-7 col-sm-8 col-sm-push-4 col-lg-push-3\"><blockquote><h3 data-i18n=\"new_home.winning\"></h3></blockquote></div><div class=\"col-lg-2 col-sm-3 col-lg-offset-1 text-center col-sm-pull-8 col-lg-pull-7\"><img src=\"/images/pages/home/pcmag.png\" class=\"img-circle\"/><h6>PC Mag</h6><div class=\"small\">pcmag.com</div></div></div></div><div class=\"request-demo-row text-center\"><h3 data-i18n=\"new_home.run_class\"></h3>");
 if ( view.isTeacherWithDemo)
 {
 buf.push("<div><button data-event-action=\"Homepage Setup Class Page Bottom\" data-i18n=\"new_home.setup_a_class\" class=\"btn btn-primary btn-lg setup-class-btn\"></button></div>");

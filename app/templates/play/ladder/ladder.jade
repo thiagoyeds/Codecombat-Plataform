@@ -17,8 +17,11 @@ block content
             span.spl - Arena
 
     div#level-column
-      if view.levelDescription
-        div!= view.levelDescription
+      if view.level.get('name') != 'Cavern Survival'
+        if view.levelDescription
+          div!= view.levelDescription
+      else
+        img(src="/file/db/level/544437e0645c0c0000c3291d/OCT30-Cavern Survival.png")
 
       if view.leagueType === 'clan'
         h1.league-header
@@ -88,50 +91,44 @@ block content
     if view.level.get('name') == 'Zero Sum' && !view.league
       .tournament-blurb
         h2
-          span(data-i18n="ladder.tournament_ended") Tournament ended
-          |  #{view.tournamentTimeLeft}
-          //span(data-i18n="ladder.tournament_started") , started
-          //|  #{view.tournamentTimeElapsed}
+          span 
+          |  Zero Sum - A destruição
         p
-          span(data-i18n="ladder.tournament_blurb_zero_sum") Unleash your coding creativity in both gold gathering and battle tactics in this alpine mirror match between red sorcerer and blue sorcerer. The tournament began on Friday, March 27 and will run until Monday, April 6 at 5PM PDT. Compete for fun and glory! Check out the details
-          |  
-          a(href="http://blog.codecombat.com/kings-of-zero-sum-strategies-from-the-ai-wars", data-i18n="ladder.tournament_blurb_blog") on our blog
-          | .
+          span
+          |  O "Zero Sum" é um modo de combate de feiticeiros que tem como objetivo
+          |  aniquilar seu inimigo em dois minutos, entretanto um terceiro elemento surpresa
+          |  aparece para atrapalhar o duelo sendo muito forte e ágil. Colete os itens
+          |  disponivel no mapa para construir seu exército e ter forças para derrota-lo
+          |  antes que seja seu fim.
+
+    if view.level.get('name') == 'Cavern Survival'
+      .tournament-blurb
+        h2
+          span
+          |  Cavern Survival - A sobrevivência
         p
-          strong Tournament ended! 
-          a(href="#winners") Behold the winners
-          | . Thanks for playing! You can 
-          strong still play
-          |  Zero Sum as long as you like.
+        |  O "Cavern Survival" é um modo de sobrevivência, no qual, o jogador que
+        |  sobreviver por mais tempo vence. Seu personagem ficará em uma sala separada
+        |  do seu inimigo, mas seu rival será outro. Uma série de ogros invadirá ambas
+        |  as regiões com o objetivo de eliminar os dois players, utilize táticas defensivas
+        |  para acabar de uma vez com as chances do seu oponente.
         p
-          | Want to commiserate? Head over to 
-          a(href="http://discourse.codecombat.com/") the forum
-          |  and discuss your strategies, your triumphs, and your turmoils.
+        |  Essa é a unica arena que seus equipamentos e heróis serão levados em consideração,
+        |  então compre seu arsenal e enfrente seu inimigo preparado.
 
     if view.level.get('name') == 'Ace of Coders'
       .tournament-blurb
         h2
-          //span(data-i18n="ladder.tournament_ends") Tournament ends
-          span(data-i18n="ladder.tournament_ended") Tournament ended
-          |  #{view.tournamentTimeLeft}
-          span(data-i18n="ladder.tournament_started") , started
-          |  #{view.tournamentTimeElapsed}
+          span
+          |  Ace of Coders - A arena
         p
-          span(data-i18n="ladder.tournament_blurb_ace_of_coders") Battle it out in the frozen glacier in this domination-style mirror match! The tournament began on Wednesday, September 16 and will run until Wednesday, October 14 at 5PM PDT. Check out the details
-          |  
-          a(href="http://blog.codecombat.com/the-true-ace-of-coders", data-i18n="ladder.tournament_blurb_blog") on our blog
-          | .
-        p
-          strong Tournament ended! 
-          a(href="#winners") Behold the winners
-          | . Thanks for playing! You can 
-          strong still play
-          |  Ace of Coders as long as you like.
-        p
-          | Want to commiserate? Head over to 
-          a(href="http://discourse.codecombat.com/") the forum
-          |  and discuss your strategies, your triumphs, and your turmoils.
-
+        |  O “Ace of coders” é um modo de confronto frontal em que os usuários escrevem
+        |  seus códigos de combate e seus inimigos tentam vencer-los utilizando estratégias
+        |  diferentes ou um código mais otimizado que pensem em situações diversas para
+        |  neutralizar seu oponente. Alguns conceitos podem ser aprendidos fora da
+        |  plataforma para aplicá-los em suas instruções, tornando-se algo divertido,
+        |  desafiador e didático.
+        
     div#columns.row
       div.column.col-md-2
       if view.teams
@@ -163,9 +160,7 @@ block content
     if view.level.get('name') == 'Greed'
       li
         a(href="#rules", data-toggle="tab", data-i18n="ladder.rules") Rules
-    if view.level.get('name') == 'Greed' || view.level.get('name') == 'Criss-Cross' || view.level.get('name') == 'Zero Sum' || view.level.get('name') == 'Ace of Coders'
-      li
-        a(href="#winners", data-toggle="tab", data-i18n="ladder.winners") Winners
+    
 
   div.tab-content
     .tab-pane.active.well#ladder

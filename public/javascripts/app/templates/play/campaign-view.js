@@ -2,7 +2,7 @@ require.register("templates/play/campaign-view", function(exports, require, modu
 var __templateData = function anonymous(locals
 /**/) {
 var buf = [];
-var locals_ = (locals || {}),view = locals_.view,campaign = locals_.campaign,features = locals_.features,serverConfig = locals_.serverConfig,levels = locals_.levels,i18n = locals_.i18n,translate = locals_.translate,levelStatusMap = locals_.levelStatusMap,editorMode = locals_.editorMode,levelDifficultyMap = locals_.levelDifficultyMap,levelPlayCountMap = locals_.levelPlayCountMap,marked = locals_.marked,picoCTF = locals_.picoCTF,me = locals_.me,adjacentCampaigns = locals_.adjacentCampaigns,_ = locals_._,campaigns = locals_.campaigns,isIPadApp = locals_.isIPadApp,levelsCompleted = locals_.levelsCompleted,levelsTotal = locals_.levelsTotal;if ( view.showAds())
+var locals_ = (locals || {}),view = locals_.view,campaign = locals_.campaign,features = locals_.features,serverConfig = locals_.serverConfig,levels = locals_.levels,i18n = locals_.i18n,translate = locals_.translate,levelStatusMap = locals_.levelStatusMap,editorMode = locals_.editorMode,levelDifficultyMap = locals_.levelDifficultyMap,levelPlayCountMap = locals_.levelPlayCountMap,marked = locals_.marked,picoCTF = locals_.picoCTF,me = locals_.me,adjacentCampaigns = locals_.adjacentCampaigns,_ = locals_._,campaigns = locals_.campaigns,levelsCompleted = locals_.levelsCompleted,levelsTotal = locals_.levelsTotal;if ( view.showAds())
 {
 buf.push("<!-- TODO: loading this multiple times yields script error:--><!-- Uncaught TagError: adsbygoogle.push() error: All ins elements in the DOM with class=adsbygoogle already have ads in them.--><div class=\"ad-container\">");
 if ( campaign)
@@ -574,18 +574,9 @@ if ( !features.codePlay)
 buf.push("<a href=\"/clans\" data-i18n=\"[title]clans.clans\" class=\"btn clans\"></a>");
 }
 buf.push("<button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayItemsModal\" data-i18n=\"[title]play.items\" class=\"btn items\"></button><button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayHeroesModal\" data-i18n=\"[title]play.heroes\" class=\"btn heroes\"></button><button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayAchievementsModal\" data-i18n=\"[title]play.achievements\" class=\"btn achievements\"></button>");
-if ( (me.get('anonymous') === false || me.get('iosIdentifierForVendor') || isIPadApp) && !features.freeOnly)
-{
-buf.push("<button data-toggle=\"coco-modal\" data-target=\"play/modal/BuyGemsModal\" data-i18n=\"[title]play.buy_gems\" class=\"btn gems\"></button>");
-}
 if ( !me.get('anonymous', true) && !features.codePlay)
 {
-buf.push("<button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayAccountModal\" data-i18n=\"[title]nav.account\" class=\"btn account\"></button>");
-}
-buf.push("<!--if me.isAdmin()--><!--  button.btn.settings(data-toggle='coco-modal', data-target='play/modal/PlaySettingsModal', data-i18n=\"[title]play.settings\")-->");
-if ( me.get('anonymous', true))
-{
-buf.push("<button data-toggle=\"coco-modal\" data-target=\"core/CreateAccountModal\" data-i18n=\"[title]play.settings\" class=\"btn settings\"></button>");
+buf.push("<a href=\"/account/settings\" data-original-title=\"Configuração\" class=\"btn account\"></a>");
 }
 buf.push("</div><div class=\"user-status header-font picoctf-hide\"><div class=\"user-status-line\"><span class=\"gem gem-30\"></span><span id=\"gems-count\" class=\"spr\">" + (jade.escape(null == (jade.interp = me.gems()) ? "" : jade.interp)) + "</span><span data-i18n=\"general.player_level\" class=\"level-indicator\"></span><span class=\"player-level spr\">" + (jade.escape(null == (jade.interp = me.level()) ? "" : jade.interp)) + "</span><span class=\"player-hero-icon\"></span>");
 if ( me.get('anonymous'))
@@ -594,7 +585,7 @@ buf.push("<span data-i18n=\"play.anonymous\" class=\"player-name spr\">Anonymous
 }
 else
 {
-buf.push("<a data-toggle=\"coco-modal\" data-target=\"play/modal/PlayAccountModal\" class=\"player-name spr\">" + (jade.escape(null == (jade.interp = me.get('name')) ? "" : jade.interp)) + "</a><button id=\"logout-button\" data-i18n=\"login.log_out\" class=\"btn btn-illustrated btn-warning\">Log Out</button>");
+buf.push("<a href=\"/account/settings\" class=\"player-name spr\">" + (jade.escape(null == (jade.interp = me.get('name')) ? "" : jade.interp)) + "</a><button id=\"logout-button\" data-i18n=\"login.log_out\" class=\"btn btn-illustrated btn-warning\">Log Out</button>");
 if ( me.isPremium())
 {
 buf.push("<button data-i18n=\"nav.contact\" data-toggle=\"coco-modal\" data-target=\"core/ContactModal\" class=\"btn btn-illustrated btn-primary\">Contact</button>");

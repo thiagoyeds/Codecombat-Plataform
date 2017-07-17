@@ -5,7 +5,7 @@ var buf = [];
 var locals_ = (locals || {}),features = locals_.features,me = locals_.me,view = locals_.view,usesSocialMedia = locals_.usesSocialMedia,isIE = locals_.isIE,fbRef = locals_.fbRef;buf.push("<div id=\"site-nav\"><a href=\"/\"><img id=\"nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><div id=\"site-nav-links\"><a href=\"/\"><img id=\"small-nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><a href=\"/\"><span class=\"glyphicon glyphicon-home\"></span></a>");
 if ( !features.playViewsOnly)
 {
-buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a>");
+buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a href=\"/play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a>");
 if ( me.isStudent())
 {
 buf.push("<a href=\"/students\" data-i18n=\"nav.my_courses\"></a>");
@@ -14,11 +14,7 @@ if ( me.isTeacher())
 {
 buf.push("<a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a>");
-}
-buf.push("<a href=\"/community\" data-i18n=\"nav.community\"></a>");
+buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a><a href=\"/community\" data-i18n=\"nav.community\"></a>");
 if ( me.get('anonymous') === false)
 {
 buf.push("<span class=\"dropdown\"><button href=\"#\" data-toggle=\"dropdown\" class=\"btn btn-sm header-font dropdown-toggle\">");
@@ -50,7 +46,7 @@ else
 buf.push("<button data-i18n=\"login.sign_up\" class=\"btn btn-sm btn-primary header-font signup-button\"></button><button data-i18n=\"login.log_in\" class=\"btn btn-sm btn-default header-font login-button\"></button>");
 }
 }
-buf.push("<select class=\"language-dropdown form-control\"></select></div></div><div id=\"site-content-area\"><p><input type=\"text\" data-i18n=\"[placeholder]clans.new_name\" placeholder=\"New clan name\" class=\"create-clan-name\"/></p><p><textarea rows=\"2\" data-i18n=\"[placeholder]clans.new_description\" placeholder=\"New clan description\" class=\"create-clan-description\"></textarea></p><p><input type=\"checkbox\" class=\"private-clan-checkbox\"/><span data-i18n=\"clans.make_private\" class=\"spl\">Make clan private</span><span class=\"spl\">(</span><a data-i18n=\"clans.private_preview\" class=\"private-more-info\"></a><span>)</span></p><p><button data-i18n=\"clans.create_clan\" class=\"btn btn-success create-clan-btn\">Create New Clan</button></p><div role=\"tabpanel\"><ul role=\"tablist\" class=\"nav nav-tabs\"><li role=\"presentation\" class=\"active\"><a href=\"#public-clans\" aria-controls=\"public-clans\" role=\"tab\" data-toggle=\"tab\" data-i18n=\"clans.public_clans\">Public Clans</a></li><li role=\"presentation\"><a href=\"#my-clans\" aria-controls=\"my-clans\" role=\"tab\" data-toggle=\"tab\" data-i18n=\"clans.my_clans\">My Clans</a></li></ul></div><div class=\"tab-content\"><div id=\"public-clans\" role=\"tabpanel\" class=\"tab-pane active\"><table class=\"table table-striped table-condensed\"><thead><tr><th data-i18n=\"clans.clan_name\">Clan Name</th><th data-i18n=\"play.heroes\">Heroes</th><th data-i18n=\"clans.chieftain\">Chieftain</th><th> </th></tr></thead><tbody>");
+buf.push("<select class=\"language-dropdown form-control\"></select></div></div><div id=\"site-content-area\"><p><input type=\"text\" data-i18n=\"[placeholder]clans.new_name\" placeholder=\"New clan name\" class=\"create-clan-name\"/></p><p><textarea rows=\"2\" data-i18n=\"[placeholder]clans.new_description\" placeholder=\"New clan description\" class=\"create-clan-description\"></textarea></p><p><button data-i18n=\"clans.create_clan\" class=\"btn btn-success create-clan-btn\">Create New Clan</button></p><div role=\"tabpanel\"><ul role=\"tablist\" class=\"nav nav-tabs\"><li role=\"presentation\" class=\"active\"><a href=\"#public-clans\" aria-controls=\"public-clans\" role=\"tab\" data-toggle=\"tab\" data-i18n=\"clans.public_clans\">Public Clans</a></li><li role=\"presentation\"><a href=\"#my-clans\" aria-controls=\"my-clans\" role=\"tab\" data-toggle=\"tab\" data-i18n=\"clans.my_clans\">My Clans</a></li></ul></div><div class=\"tab-content\"><div id=\"public-clans\" role=\"tabpanel\" class=\"tab-pane active\"><table class=\"table table-striped table-condensed\"><thead><tr><th data-i18n=\"clans.clan_name\">Clan Name</th><th data-i18n=\"play.heroes\">Heroes</th><th data-i18n=\"clans.chieftain\">Chieftain</th><th> </th></tr></thead><tbody>");
 if ( view.publicClansArray.length)
 {
 // iterate view.publicClansArray

@@ -10,14 +10,16 @@ block header
           span.glyphicon.glyphicon-home
 
         if !features.playViewsOnly
-          a(href="/about", data-i18n="nav.about")
+          a(href="/play", data-i18n="common.play")
+          a(href="/play/ladder", data-i18n="game_menu.multiplayer_tab")
+
           if me.isStudent()
             a(href="/students", data-i18n="nav.my_courses")
           if me.isTeacher()
             a(href="/teachers/classes", data-i18n="nav.my_classrooms")
-          if !me.isAnonymous() && !me.isStudent() && !me.isTeacher()
-            a(href="/play", data-i18n="common.play")
-            a(href=view.forumLink(), data-i18n="nav.forum")
+
+          a(href="/about", data-i18n="nav.about")
+          a(href=view.forumLink(), data-i18n="nav.forum")
           a(href='/community', data-i18n="nav.community")
 
           if me.get('anonymous') === false

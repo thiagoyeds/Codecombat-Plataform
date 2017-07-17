@@ -5,7 +5,7 @@ var buf = [];
 var locals_ = (locals || {}),features = locals_.features,me = locals_.me,view = locals_.view,clan = locals_.clan,owner = locals_.owner,stats = locals_.stats,isOwner = locals_.isOwner,isMember = locals_.isMember,joinClanLink = locals_.joinClanLink,arenas = locals_.arenas,i18n = locals_.i18n,members = locals_.members,memberSort = locals_.memberSort,memberLanguageMap = locals_.memberLanguageMap,conceptsProgression = locals_.conceptsProgression,userConceptsMap = locals_.userConceptsMap,campaignLevelProgressions = locals_.campaignLevelProgressions,lastUserCampaignLevelMap = locals_.lastUserCampaignLevelMap,memberLevelStateMap = locals_.memberLevelStateMap,showExpandedProgress = locals_.showExpandedProgress,memberAchievementsMap = locals_.memberAchievementsMap,usesSocialMedia = locals_.usesSocialMedia,isIE = locals_.isIE,fbRef = locals_.fbRef;buf.push("<div id=\"site-nav\"><a href=\"/\"><img id=\"nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><div id=\"site-nav-links\"><a href=\"/\"><img id=\"small-nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><a href=\"/\"><span class=\"glyphicon glyphicon-home\"></span></a>");
 if ( !features.playViewsOnly)
 {
-buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a>");
+buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a href=\"/play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a>");
 if ( me.isStudent())
 {
 buf.push("<a href=\"/students\" data-i18n=\"nav.my_courses\"></a>");
@@ -14,11 +14,7 @@ if ( me.isTeacher())
 {
 buf.push("<a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a>");
-}
-buf.push("<a href=\"/community\" data-i18n=\"nav.community\"></a>");
+buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a><a href=\"/community\" data-i18n=\"nav.community\"></a>");
 if ( me.get('anonymous') === false)
 {
 buf.push("<span class=\"dropdown\"><button href=\"#\" data-toggle=\"dropdown\" class=\"btn btn-sm header-font dropdown-toggle\">");
@@ -138,7 +134,10 @@ buf.push("<div class=\"col-lg-6\"><h2 data-i18n=\"play.campaign_multiplayer\"></
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var arena = $$obj[$index];
 
+if ( arena.slug === 'cavern-survival' || arena.slug === 'zero-sum' || arena.slug === 'ace-of-coders')
+{
 buf.push("<h3><a" + (jade.attrs({ 'href':("/play/ladder/" + (arena.slug) + "/clan/" + (clan.id) + "") }, {"href":true})) + ">" + (jade.escape(null == (jade.interp = i18n(arena, 'name')) ? "" : jade.interp)) + "</a></h3>");
+}
     }
 
   } else {
@@ -146,7 +145,10 @@ buf.push("<h3><a" + (jade.attrs({ 'href':("/play/ladder/" + (arena.slug) + "/cla
     for (var $index in $$obj) {
       $$l++;      var arena = $$obj[$index];
 
+if ( arena.slug === 'cavern-survival' || arena.slug === 'zero-sum' || arena.slug === 'ace-of-coders')
+{
 buf.push("<h3><a" + (jade.attrs({ 'href':("/play/ladder/" + (arena.slug) + "/clan/" + (clan.id) + "") }, {"href":true})) + ">" + (jade.escape(null == (jade.interp = i18n(arena, 'name')) ? "" : jade.interp)) + "</a></h3>");
+}
     }
 
   }

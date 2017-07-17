@@ -44,57 +44,18 @@ block content
 
     .half-width
 
-      h2.lower-titles
-        a(href="https://www.facebook.com/codecombat", data-i18n="community.find_us")
+      h2.lower-titles(data-i18n="community.find_us")
 
       .logo-row
 
-        a(href="https://github.com/codecombat/codecombat")
+        a(href="https://github.com/ThiagoWhispher/Codecombat")
           img(src="/images/pages/community/logo_github.png", data-i18n="[data-content]community.social_github" data-content="Check out all our code on GitHub")
-
-        a(href="http://blog.codecombat.com")
-          img(src="/images/pages/community/logo_sett.png", data-i18n="[data-content]community.social_blog" data-content="Read the CodeCombat blog on Sett")
 
         a(href="http://discourse.codecombat.com")
           img(src="/images/pages/community/logo_discourse.png", data-i18n="[data-content]community.social_discource" data-content="Join the discussion on our Discourse forum")
 
-        a(href="https://www.facebook.com/codecombat")
-          img(src="/images/pages/community/logo_facebook.png", data-i18n="[data-content]community.social_facebook" data-content="Like CodeCombat on Facebook")
-
-        a(href="https://twitter.com/CodeCombat")
-          img(src="/images/pages/community/logo_twitter.png", data-i18n="[data-content]community.social_twitter" data-content="Follow CodeCombat on Twitter")
-
-        a(href="https://plus.google.com/115285980638641924488/posts")
-          img(src="/images/pages/community/logo_g+.png", data-i18n="[data-content]community.social_gplus" data-content="Join CodeCombat on Google+")
-
         a(href="https://coco-slack-invite.herokuapp.com/")
           img(src="/images/pages/community/logo_slack.png", data-i18n="[data-content]community.social_slack" data-content="Chat with us in the public CodeCombat Slack channel")
 
-    .half-width
-
-      h2.lower-titles
-        a(href="/contribute", data-i18n="community.contribute_to_the_project")
-
-      .logo-row.contribute-classes
-
-        a(href="/contribute/archmage")
-          img(src="/images/pages/community/archmage.png")
-
-        a(href="/contribute/artisan")
-          img(src="/images/pages/community/artisan.png")
-
-        if !me.isOnPremiumServer()
-          a(href="/contribute/adventurer")
-            img(src="/images/pages/community/adventurer.png")
-
-        a(href="/contribute/scribe")
-          img(src="/images/pages/community/scribe.png")
-
-        a(href="/contribute/diplomat")
-          img(src="/images/pages/community/diplomat.png")
-
-        a(href="/contribute/ambassador")
-          img(src="/images/pages/community/ambassador.png")
-
-
+    
   .clearfix

@@ -2,7 +2,7 @@ require.register("templates/play/campaign-view", function(exports, require, modu
 var __templateData = function anonymous(locals
 /**/) {
 var buf = [];
-var locals_ = (locals || {}),view = locals_.view,campaign = locals_.campaign,features = locals_.features,serverConfig = locals_.serverConfig,levels = locals_.levels,i18n = locals_.i18n,translate = locals_.translate,levelStatusMap = locals_.levelStatusMap,editorMode = locals_.editorMode,levelDifficultyMap = locals_.levelDifficultyMap,levelPlayCountMap = locals_.levelPlayCountMap,marked = locals_.marked,picoCTF = locals_.picoCTF,me = locals_.me,adjacentCampaigns = locals_.adjacentCampaigns,_ = locals_._,campaigns = locals_.campaigns,isIPadApp = locals_.isIPadApp,levelsCompleted = locals_.levelsCompleted,levelsTotal = locals_.levelsTotal;if ( view.showAds())
+var locals_ = (locals || {}),view = locals_.view,campaign = locals_.campaign,features = locals_.features,serverConfig = locals_.serverConfig,levels = locals_.levels,i18n = locals_.i18n,translate = locals_.translate,levelStatusMap = locals_.levelStatusMap,editorMode = locals_.editorMode,levelDifficultyMap = locals_.levelDifficultyMap,levelPlayCountMap = locals_.levelPlayCountMap,marked = locals_.marked,picoCTF = locals_.picoCTF,me = locals_.me,adjacentCampaigns = locals_.adjacentCampaigns,_ = locals_._,campaigns = locals_.campaigns,levelsCompleted = locals_.levelsCompleted,levelsTotal = locals_.levelsTotal;if ( view.showAds())
 {
 buf.push("<!-- TODO: loading this multiple times yields script error:--><!-- Uncaught TagError: adsbygoogle.push() error: All ins elements in the DOM with class=adsbygoogle already have ads in them.--><div class=\"ad-container\">");
 if ( campaign)
@@ -574,18 +574,9 @@ if ( !features.codePlay)
 buf.push("<a href=\"/clans\" data-i18n=\"[title]clans.clans\" class=\"btn clans\"></a>");
 }
 buf.push("<button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayItemsModal\" data-i18n=\"[title]play.items\" class=\"btn items\"></button><button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayHeroesModal\" data-i18n=\"[title]play.heroes\" class=\"btn heroes\"></button><button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayAchievementsModal\" data-i18n=\"[title]play.achievements\" class=\"btn achievements\"></button>");
-if ( (me.get('anonymous') === false || me.get('iosIdentifierForVendor') || isIPadApp) && !features.freeOnly)
-{
-buf.push("<button data-toggle=\"coco-modal\" data-target=\"play/modal/BuyGemsModal\" data-i18n=\"[title]play.buy_gems\" class=\"btn gems\"></button>");
-}
 if ( !me.get('anonymous', true) && !features.codePlay)
 {
-buf.push("<button data-toggle=\"coco-modal\" data-target=\"play/modal/PlayAccountModal\" data-i18n=\"[title]nav.account\" class=\"btn account\"></button>");
-}
-buf.push("<!--if me.isAdmin()--><!--  button.btn.settings(data-toggle='coco-modal', data-target='play/modal/PlaySettingsModal', data-i18n=\"[title]play.settings\")-->");
-if ( me.get('anonymous', true))
-{
-buf.push("<button data-toggle=\"coco-modal\" data-target=\"core/CreateAccountModal\" data-i18n=\"[title]play.settings\" class=\"btn settings\"></button>");
+buf.push("<a href=\"/account/settings\" data-original-title=\"Configuração\" class=\"btn account\"></a>");
 }
 buf.push("</div><div class=\"user-status header-font picoctf-hide\"><div class=\"user-status-line\"><span class=\"gem gem-30\"></span><span id=\"gems-count\" class=\"spr\">" + (jade.escape(null == (jade.interp = me.gems()) ? "" : jade.interp)) + "</span><span data-i18n=\"general.player_level\" class=\"level-indicator\"></span><span class=\"player-level spr\">" + (jade.escape(null == (jade.interp = me.level()) ? "" : jade.interp)) + "</span><span class=\"player-hero-icon\"></span>");
 if ( me.get('anonymous'))
@@ -594,7 +585,7 @@ buf.push("<span data-i18n=\"play.anonymous\" class=\"player-name spr\">Anonymous
 }
 else
 {
-buf.push("<a data-toggle=\"coco-modal\" data-target=\"play/modal/PlayAccountModal\" class=\"player-name spr\">" + (jade.escape(null == (jade.interp = me.get('name')) ? "" : jade.interp)) + "</a><button id=\"logout-button\" data-i18n=\"login.log_out\" class=\"btn btn-illustrated btn-warning\">Log Out</button>");
+buf.push("<a href=\"/account/settings\" class=\"player-name spr\">" + (jade.escape(null == (jade.interp = me.get('name')) ? "" : jade.interp)) + "</a><button id=\"logout-button\" data-i18n=\"login.log_out\" class=\"btn btn-illustrated btn-warning\">Log Out</button>");
 if ( me.isPremium())
 {
 buf.push("<button data-i18n=\"nav.contact\" data-toggle=\"coco-modal\" data-target=\"core/ContactModal\" class=\"btn btn-illustrated btn-primary\">Contact</button>");
@@ -930,7 +921,7 @@ var buf = [];
 var locals_ = (locals || {}),features = locals_.features,me = locals_.me,view = locals_.view,i18n = locals_.i18n,_ = locals_._,usesSocialMedia = locals_.usesSocialMedia,isIE = locals_.isIE,fbRef = locals_.fbRef;buf.push("<div id=\"site-nav\"><a href=\"/\"><img id=\"nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><div id=\"site-nav-links\"><a href=\"/\"><img id=\"small-nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><a href=\"/\"><span class=\"glyphicon glyphicon-home\"></span></a>");
 if ( !features.playViewsOnly)
 {
-buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a>");
+buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a href=\"/play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a>");
 if ( me.isStudent())
 {
 buf.push("<a href=\"/students\" data-i18n=\"nav.my_courses\"></a>");
@@ -939,11 +930,7 @@ if ( me.isTeacher())
 {
 buf.push("<a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a>");
-}
-buf.push("<a href=\"/community\" data-i18n=\"nav.community\"></a>");
+buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a><a href=\"/community\" data-i18n=\"nav.community\"></a>");
 if ( me.get('anonymous') === false)
 {
 buf.push("<span class=\"dropdown\"><button href=\"#\" data-toggle=\"dropdown\" class=\"btn btn-sm header-font dropdown-toggle\">");
@@ -983,9 +970,16 @@ if ( view.leagueType === 'course' && view.course)
 buf.push("<div id=\"course-header\"><div id=\"course-details-link\"><a" + (jade.attrs({ 'href':("/students/" + (view.course.id) + "/" + (view.league.id) + "") }, {"href":true})) + "><span class=\"glyphicon glyphicon-arrow-left\"></span><span class=\"spl\">Levels</span></a></div><div class=\"text-center\"><span id=\"course-name\"><span>" + (jade.escape(null == (jade.interp = i18n(view.course.attributes, 'name')) ? "" : jade.interp)) + "</span><span class=\"spl\">- Arena</span></span></div></div>");
 }
 buf.push("<div id=\"level-column\">");
+if ( view.level.get('name') != 'Cavern Survival')
+{
 if ( view.levelDescription)
 {
 buf.push("<div>" + (null == (jade.interp = view.levelDescription) ? "" : jade.interp) + "</div>");
+}
+}
+else
+{
+buf.push("<img src=\"/file/db/level/544437e0645c0c0000c3291d/OCT30-Cavern Survival.png\"/>");
 }
 if ( view.leagueType === 'clan')
 {
@@ -1002,11 +996,15 @@ buf.push("<div class=\"tournament-blurb\"><h2><span data-i18n=\"ladder.tournamen
 }
 if ( view.level.get('name') == 'Zero Sum' && !view.league)
 {
-buf.push("<div class=\"tournament-blurb\"><h2><span data-i18n=\"ladder.tournament_ended\">Tournament ended</span> " + (jade.escape((jade.interp = view.tournamentTimeLeft) == null ? '' : jade.interp)) + "<!--span(data-i18n=\"ladder.tournament_started\") , started--><!--|  #{view.tournamentTimeElapsed}--></h2><p><span data-i18n=\"ladder.tournament_blurb_zero_sum\">Unleash your coding creativity in both gold gathering and battle tactics in this alpine mirror match between red sorcerer and blue sorcerer. The tournament began on Friday, March 27 and will run until Monday, April 6 at 5PM PDT. Compete for fun and glory! Check out the details</span> <a href=\"http://blog.codecombat.com/kings-of-zero-sum-strategies-from-the-ai-wars\" data-i18n=\"ladder.tournament_blurb_blog\">on our blog</a>.</p><p><strong>Tournament ended! </strong><a href=\"#winners\">Behold the winners</a>. Thanks for playing! You can <strong>still play</strong> Zero Sum as long as you like.</p><p>Want to commiserate? Head over to <a href=\"http://discourse.codecombat.com/\">the forum</a> and discuss your strategies, your triumphs, and your turmoils.</p></div>");
+buf.push("<div class=\"tournament-blurb\"><h2><span> </span> Zero Sum - A destruição</h2><p><span></span> O \"Zero Sum\" é um modo de combate de feiticeiros que tem como objetivo\n aniquilar seu inimigo em dois minutos, entretanto um terceiro elemento surpresa\n aparece para atrapalhar o duelo sendo muito forte e ágil. Colete os itens\n disponivel no mapa para construir seu exército e ter forças para derrota-lo\n antes que seja seu fim.</p></div>");
+}
+if ( view.level.get('name') == 'Cavern Survival')
+{
+buf.push("<div class=\"tournament-blurb\"><h2><span></span> Cavern Survival - A sobrevivência</h2><p></p> O \"Cavern Survival\" é um modo de sobrevivência, no qual, o jogador que\n sobreviver por mais tempo vence. Seu personagem ficará em uma sala separada\n do seu inimigo, mas seu rival será outro. Uma série de ogros invadirá ambas\n as regiões com o objetivo de eliminar os dois players, utilize táticas defensivas\n para acabar de uma vez com as chances do seu oponente.<p></p> Essa é a unica arena que seus equipamentos e heróis serão levados em consideração,\n então compre seu arsenal e enfrente seu inimigo preparado.</div>");
 }
 if ( view.level.get('name') == 'Ace of Coders')
 {
-buf.push("<div class=\"tournament-blurb\"><h2><!--span(data-i18n=\"ladder.tournament_ends\") Tournament ends--><span data-i18n=\"ladder.tournament_ended\">Tournament ended</span> " + (jade.escape((jade.interp = view.tournamentTimeLeft) == null ? '' : jade.interp)) + "<span data-i18n=\"ladder.tournament_started\">, started</span> " + (jade.escape((jade.interp = view.tournamentTimeElapsed) == null ? '' : jade.interp)) + "</h2><p><span data-i18n=\"ladder.tournament_blurb_ace_of_coders\">Battle it out in the frozen glacier in this domination-style mirror match! The tournament began on Wednesday, September 16 and will run until Wednesday, October 14 at 5PM PDT. Check out the details</span> <a href=\"http://blog.codecombat.com/the-true-ace-of-coders\" data-i18n=\"ladder.tournament_blurb_blog\">on our blog</a>.</p><p><strong>Tournament ended! </strong><a href=\"#winners\">Behold the winners</a>. Thanks for playing! You can <strong>still play</strong> Ace of Coders as long as you like.</p><p>Want to commiserate? Head over to <a href=\"http://discourse.codecombat.com/\">the forum</a> and discuss your strategies, your triumphs, and your turmoils.</p></div>");
+buf.push("<div class=\"tournament-blurb\"><h2><span></span> Ace of Coders - A arena</h2><p></p> O “Ace of coders” é um modo de confronto frontal em que os usuários escrevem\n seus códigos de combate e seus inimigos tentam vencer-los utilizando estratégias\n diferentes ou um código mais otimizado que pensem em situações diversas para\n neutralizar seu oponente. Alguns conceitos podem ser aprendidos fora da\n plataforma para aplicá-los em suas instruções, tornando-se algo divertido,\n desafiador e didático.</div>");
 }
 buf.push("<div id=\"columns\" class=\"row\"><div class=\"column col-md-2\"></div>");
 if ( view.teams)
@@ -1055,10 +1053,6 @@ buf.push("<li><a href=\"#prizes\" data-toggle=\"tab\" data-i18n=\"ladder_prizes.
 if ( view.level.get('name') == 'Greed')
 {
 buf.push("<li><a href=\"#rules\" data-toggle=\"tab\" data-i18n=\"ladder.rules\">Rules</a></li>");
-}
-if ( view.level.get('name') == 'Greed' || view.level.get('name') == 'Criss-Cross' || view.level.get('name') == 'Zero Sum' || view.level.get('name') == 'Ace of Coders')
-{
-buf.push("<li><a href=\"#winners\" data-toggle=\"tab\" data-i18n=\"ladder.winners\">Winners</a></li>");
 }
 buf.push("</ul><div class=\"tab-content\"><div id=\"ladder\" class=\"tab-pane active well\"><div id=\"ladder-tab-view\"></div></div><div id=\"my-matches\" class=\"tab-pane well\"><div id=\"my-matches-tab-view\"></div></div><div id=\"simulate\" class=\"tab-pane well\"><div id=\"simulate-tab-view\"></div></div>");
 if ( view.level.get('name') == 'Greed')
@@ -1738,7 +1732,7 @@ var buf = [];
 var locals_ = (locals || {}),features = locals_.features,me = locals_.me,view = locals_.view,usesSocialMedia = locals_.usesSocialMedia,isIE = locals_.isIE,fbRef = locals_.fbRef;buf.push("<div id=\"site-nav\"><a href=\"/\"><img id=\"nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><div id=\"site-nav-links\"><a href=\"/\"><img id=\"small-nav-logo\" src=\"/images/pages/base/logo.png\" title=\"CodeCombat - Learn how to code by playing a game\" alt=\"CodeCombat\"/></a><a href=\"/\"><span class=\"glyphicon glyphicon-home\"></span></a>");
 if ( !features.playViewsOnly)
 {
-buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a>");
+buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a href=\"/play/ladder\" data-i18n=\"game_menu.multiplayer_tab\"></a>");
 if ( me.isStudent())
 {
 buf.push("<a href=\"/students\" data-i18n=\"nav.my_courses\"></a>");
@@ -1747,11 +1741,7 @@ if ( me.isTeacher())
 {
 buf.push("<a href=\"/teachers/classes\" data-i18n=\"nav.my_classrooms\"></a>");
 }
-if ( !me.isAnonymous() && !me.isStudent() && !me.isTeacher())
-{
-buf.push("<a href=\"/play\" data-i18n=\"common.play\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a>");
-}
-buf.push("<a href=\"/community\" data-i18n=\"nav.community\"></a>");
+buf.push("<a href=\"/about\" data-i18n=\"nav.about\"></a><a" + (jade.attrs({ 'href':(view.forumLink()), 'data-i18n':("nav.forum") }, {"href":true,"data-i18n":true})) + "></a><a href=\"/community\" data-i18n=\"nav.community\"></a>");
 if ( me.get('anonymous') === false)
 {
 buf.push("<span class=\"dropdown\"><button href=\"#\" data-toggle=\"dropdown\" class=\"btn btn-sm header-font dropdown-toggle\">");
@@ -1801,6 +1791,8 @@ buf.push("<div class=\"campaign-container\"><h1><a" + (jade.attrs({ 'href':("/pl
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -1847,6 +1839,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   } else {
@@ -1854,6 +1847,8 @@ buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\
     for (var $index in $$obj) {
       $$l++;      var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -1900,6 +1895,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   }
@@ -1922,6 +1918,8 @@ buf.push("<div class=\"campaign-container\"><h1><a" + (jade.attrs({ 'href':("/pl
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -1968,6 +1966,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   } else {
@@ -1975,6 +1974,8 @@ buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\
     for (var $index in $$obj) {
       $$l++;      var level = $$obj[$index];
 
+if ( level.id === 'ace-of-coders' || level.id === 'zero-sum' || level.id === 'cavern-survival')
+{
 buf.push("<a" + (jade.attrs({ 'href':(level.disabled ? "/play/ladder" : "/play/ladder/" + (level.id) + ""), 'disabled':(level.disabled), 'title':(level.description), "class": [(view.levelStatusMap[level.id] || '')] }, {"href":true,"disabled":true,"class":true,"title":true})) + "><div class=\"level\">");
 if ( level.image)
 {
@@ -2021,6 +2022,7 @@ buf.push("<span class=\"spl spr\">-</span><span" + (jade.attrs({ 'data-i18n':("c
 }
 }
 buf.push("</div><div class=\"play-text-container\"><div data-i18n=\"common.play\" class=\"overlay-text play-text\">Play</div></div></div></a>");
+}
     }
 
   }

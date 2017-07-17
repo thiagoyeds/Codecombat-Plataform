@@ -80,8 +80,9 @@ block content
         h2(data-i18n="play.campaign_multiplayer")
         p(data-i18n="clans.leagues_explanation")
         for arena in arenas
-          h3
-            a(href="/play/ladder/#{arena.slug}/clan/#{clan.id}")= i18n(arena, 'name')
+          if arena.slug === 'cavern-survival' || arena.slug === 'zero-sum' || arena.slug === 'ace-of-coders'
+            h3
+              a(href="/play/ladder/#{arena.slug}/clan/#{clan.id}")= i18n(arena, 'name')
 
   if members
     h3

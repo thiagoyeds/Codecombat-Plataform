@@ -23,6 +23,9 @@ block content
               a(href="#team")#team-link
                 small.label(data-i18n="about.team_link")
             li
+              a(href="#hall")#hall-link
+                small.label HALL
+            li
               a(href="#community")#community-link
                 small.label(data-i18n="nav.community")
             li
@@ -45,6 +48,56 @@ block content
           #mission-text.responsive-side-margins
             p(data-i18n="[html]about.mission_description_1")
             p(data-i18n="[html]about.mission_description_2")
+
+      #hall.anchor
+        .text-center
+          h3 Conheça a equipe CodeCombat Guarabira
+          h4.responsive-side-margins
+          | Nossa equipe sempre buscou formas de transmitir o conhecimento de maneira
+          | divertida e interativa, e o CodeCombat mostrou ser uma ferramenta muito
+          | apropriada para essa função.
+        // Team Guarabira
+        ul
+          //Moises Guimaraes
+          li
+            a(href="https://github.com/moisesguimaraes" rel="external")
+              .profile-pic
+                img(src="/images/pages/about/team-headshots/moises-headshot.jpg").img-thumbnail.headshot
+            .team-bio
+              h6.label.team-name
+                a(href="https://github.com/moisesguimaraes" rel="external") Moises Guimaraes
+              p Orientador
+
+          //Thiago Yuri
+          li
+            a(href="https://github.com/ThiagoWhispher" rel="external")
+              .profile-pic
+                img(src="/images/pages/about/team-headshots/thiago-headshot.jpg").img-thumbnail.headshot
+            .team-bio
+              h6.label.team-name
+                a(href="https://github.com/ThiagoWhispher" rel="external") Thiago Yuri
+              p Aluno
+
+          //Rivaldo Damacena
+          li
+            a(href="https://github.com/rivaldo9" rel="external")
+              .profile-pic
+                img(src="images/pages/about/team-headshots/rivaldo-headshot.jpg").img-thumbnail.headshot
+            .team-bio
+              h6.label.team-name
+                a(href="https://github.com/rivaldo9" rel="external") Rivaldo Damacena
+              p Aluno
+
+          //Gabriel Felipe
+          li
+            a(href="https://github.com/DoritosL" rel="external")
+              .profile-pic
+                img(src="images/pages/about/team-headshots/gabriel-headshot.jpg").img-thumbnail.headshot
+            .team-bio
+              h6.label.team-name
+                a(href="https://github.com/DoritosL" rel="external") Gabriel Felipe
+              p Aluno
+
 
       #team.anchor
         .text-center

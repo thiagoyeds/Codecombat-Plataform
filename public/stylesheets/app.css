@@ -12141,11 +12141,40 @@ div.fancy-select ul.options li.hover {
       right: 100%;
       top: 0; }
   /* line 114, /vagrant/app/styles/about.sass */
-  #about-view #team ul {
+  #about-view #hall ul {
     text-align: center;
     margin-top: 40px;
     padding: 0; }
     /* line 118, /vagrant/app/styles/about.sass */
+    #about-view #hall ul li {
+      width: 200px;
+      height: 230px;
+      list-style: none;
+      display: inline-block;
+      text-align: center;
+      color: black;
+      margin: 0px 20px; }
+      /* line 126, /vagrant/app/styles/about.sass */
+      #about-view #hall ul li small {
+        display: block;
+        white-space: nowrap; }
+      /* line 129, /vagrant/app/styles/about.sass */
+      #about-view #hall ul li .img-thumbnail {
+        border-radius: 50%;
+        padding: 0;
+        background-color: #000;
+        max-width: 200px;
+        max-height: 200px; }
+      /* line 135, /vagrant/app/styles/about.sass */
+      #about-view #hall ul li .profile-pic:hover .headshot {
+        display: inline;
+        border: 5px solid #F2BE19; }
+  /* line 140, /vagrant/app/styles/about.sass */
+  #about-view #team ul {
+    text-align: center;
+    margin-top: 40px;
+    padding: 0; }
+    /* line 144, /vagrant/app/styles/about.sass */
     #about-view #team ul li {
       width: 200px;
       height: 230px;
@@ -12153,48 +12182,48 @@ div.fancy-select ul.options li.hover {
       display: inline-block;
       text-align: center;
       color: black; }
-      /* line 125, /vagrant/app/styles/about.sass */
+      /* line 151, /vagrant/app/styles/about.sass */
       #about-view #team ul li small {
         display: block;
         white-space: nowrap; }
-      /* line 128, /vagrant/app/styles/about.sass */
+      /* line 154, /vagrant/app/styles/about.sass */
       #about-view #team ul li .img-thumbnail {
         border-radius: 50%;
         padding: 0;
         background-color: #7D0101; }
-      /* line 133, /vagrant/app/styles/about.sass */
+      /* line 159, /vagrant/app/styles/about.sass */
       #about-view #team ul li .avatar {
         display: none; }
-      /* line 135, /vagrant/app/styles/about.sass */
+      /* line 161, /vagrant/app/styles/about.sass */
       #about-view #team ul li .headshot {
         border: 5px solid #fff; }
-    /* line 137, /vagrant/app/styles/about.sass */
+    /* line 163, /vagrant/app/styles/about.sass */
     #about-view #team ul .profile-pic:hover .headshot {
       display: none; }
-    /* line 139, /vagrant/app/styles/about.sass */
+    /* line 165, /vagrant/app/styles/about.sass */
     #about-view #team ul .profile-pic:hover .avatar {
       display: inline;
       border: 5px solid #F2BE19; }
-  /* line 147, /vagrant/app/styles/about.sass */
+  /* line 173, /vagrant/app/styles/about.sass */
   #about-view #community-row-1 #community-avatars {
     width: 90%;
     margin: 20px 5%; }
-  /* line 151, /vagrant/app/styles/about.sass */
+  /* line 177, /vagrant/app/styles/about.sass */
   #about-view #community-row-2 {
     margin-top: 35px; }
     @media (min-width: 768px) {
-      /* line 151, /vagrant/app/styles/about.sass */
+      /* line 177, /vagrant/app/styles/about.sass */
       #about-view #community-row-2 {
         margin-top: 70px; } }
-    /* line 156, /vagrant/app/styles/about.sass */
+    /* line 182, /vagrant/app/styles/about.sass */
     #about-view #community-row-2 #community-graphic {
       background: #7D0101; }
-      /* line 159, /vagrant/app/styles/about.sass */
+      /* line 185, /vagrant/app/styles/about.sass */
       #about-view #community-row-2 #community-graphic img {
         position: absolute;
         right: 0;
         bottom: 0; }
-      /* line 164, /vagrant/app/styles/about.sass */
+      /* line 190, /vagrant/app/styles/about.sass */
       #about-view #community-row-2 #community-graphic #community-graphic-filler {
         background: #7D0101;
         height: 100%;
@@ -12202,97 +12231,97 @@ div.fancy-select ul.options li.hover {
         position: absolute;
         left: 100%;
         top: 0; }
-  /* line 172, /vagrant/app/styles/about.sass */
+  /* line 198, /vagrant/app/styles/about.sass */
   #about-view #story {
     font-family: "Arvo", serif;
     font-variant: normal; }
-    /* line 176, /vagrant/app/styles/about.sass */
+    /* line 202, /vagrant/app/styles/about.sass */
     #about-view #story #story-graphic-1 {
       max-width: 580px;
       margin-top: 50px;
       margin-left: auto;
       margin-right: auto; }
       @media (min-width: 768px) {
-        /* line 176, /vagrant/app/styles/about.sass */
+        /* line 202, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-1 {
           margin-top: 80px; } }
-      /* line 183, /vagrant/app/styles/about.sass */
+      /* line 209, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-1 .media-heading {
         color: #7D0101; }
-    /* line 185, /vagrant/app/styles/about.sass */
+    /* line 211, /vagrant/app/styles/about.sass */
     #about-view #story #story-graphic-2 {
       margin-top: 50px;
       margin-left: auto;
       margin-right: auto;
       max-width: 390px; }
       @media (min-width: 768px) {
-        /* line 185, /vagrant/app/styles/about.sass */
+        /* line 211, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-2 {
           margin-top: 80px; } }
-      /* line 193, /vagrant/app/styles/about.sass */
+      /* line 219, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-2 .media-heading {
         color: #20572B; }
-    /* line 195, /vagrant/app/styles/about.sass */
+    /* line 221, /vagrant/app/styles/about.sass */
     #about-view #story #story-graphic-3 {
       margin-top: 50px; }
       @media (min-width: 768px) {
-        /* line 195, /vagrant/app/styles/about.sass */
+        /* line 221, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-3 {
           margin-top: 80px; } }
-      /* line 199, /vagrant/app/styles/about.sass */
+      /* line 225, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-3 p {
         margin-top: 30px; }
-      /* line 201, /vagrant/app/styles/about.sass */
+      /* line 227, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-3 img {
         margin-top: 20px; }
-      /* line 203, /vagrant/app/styles/about.sass */
+      /* line 229, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-3 #story-bracketed-text {
         width: 100%;
         max-width: 640px;
         margin: 0 auto; }
-        /* line 207, /vagrant/app/styles/about.sass */
+        /* line 233, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-3 #story-bracketed-text .text-h1 {
           display: inline-block;
           margin: auto 0;
           color: #0E4C60;
           width: 80%;
           vertical-align: bottom; }
-        /* line 213, /vagrant/app/styles/about.sass */
+        /* line 239, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-3 #story-bracketed-text img {
           margin: auto 0; }
-        /* line 215, /vagrant/app/styles/about.sass */
+        /* line 241, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-3 #story-bracketed-text #left-bracket {
           width: 10%;
           display: inline-block; }
-        /* line 218, /vagrant/app/styles/about.sass */
+        /* line 244, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-3 #story-bracketed-text #right-bracket {
           width: 10%;
           display: inline-block; }
-      /* line 221, /vagrant/app/styles/about.sass */
+      /* line 247, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-3 #story-languages {
         margin-top: 50px; }
-        /* line 223, /vagrant/app/styles/about.sass */
+        /* line 249, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-3 #story-languages #language-icons {
           display: inline-block;
           padding-left: auto;
           padding-right: auto; }
-    /* line 228, /vagrant/app/styles/about.sass */
+    /* line 254, /vagrant/app/styles/about.sass */
     #about-view #story #story-graphic-4 {
       margin-left: auto;
       margin-right: auto;
       margin-top: 50px; }
       @media (min-width: 768px) {
-        /* line 228, /vagrant/app/styles/about.sass */
+        /* line 254, /vagrant/app/styles/about.sass */
         #about-view #story #story-graphic-4 {
           margin-top: 150px; } }
-      /* line 234, /vagrant/app/styles/about.sass */
+      /* line 260, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-4 p {
         margin-top: 20px; }
-      /* line 237, /vagrant/app/styles/about.sass */
+      /* line 263, /vagrant/app/styles/about.sass */
       #about-view #story #story-graphic-4 figure img {
         display: block;
         margin: 0 auto; }
-  /* line 245, /vagrant/app/styles/about.sass */
+  /* line 271, /vagrant/app/styles/about.sass */
   #about-view #jobs #jobs-row #benefits, #about-view #jobs #jobs-row .job-listing {
     margin-top: 65px;
     border: thin solid #0E4C60;
@@ -12302,107 +12331,107 @@ div.fancy-select ul.options li.hover {
     height: 420px;
     margin-left: auto;
     margin-right: auto; }
-    /* line 254, /vagrant/app/styles/about.sass */
+    /* line 280, /vagrant/app/styles/about.sass */
     #about-view #jobs #jobs-row #benefits h5, #about-view #jobs #jobs-row .job-listing h5 {
       text-align: center;
       color: inherit; }
-    /* line 257, /vagrant/app/styles/about.sass */
+    /* line 283, /vagrant/app/styles/about.sass */
     #about-view #jobs #jobs-row #benefits li, #about-view #jobs #jobs-row .job-listing li {
       padding-bottom: 7px; }
-  /* line 259, /vagrant/app/styles/about.sass */
+  /* line 285, /vagrant/app/styles/about.sass */
   #about-view #jobs #jobs-row #benefits {
     color: white;
     background: #0E4C60; }
-    /* line 262, /vagrant/app/styles/about.sass */
+    /* line 288, /vagrant/app/styles/about.sass */
     #about-view #jobs #jobs-row #benefits ul {
       margin-top: 20px; }
-  /* line 264, /vagrant/app/styles/about.sass */
+  /* line 290, /vagrant/app/styles/about.sass */
   #about-view #jobs #jobs-row a.benefits-link {
     color: white;
     text-decoration: underline; }
-  /* line 267, /vagrant/app/styles/about.sass */
+  /* line 293, /vagrant/app/styles/about.sass */
   #about-view #jobs #jobs-row .job-listing {
     color: #0E4C60;
     background: white;
     position: relative; }
-    /* line 272, /vagrant/app/styles/about.sass */
+    /* line 298, /vagrant/app/styles/about.sass */
     #about-view #jobs #jobs-row .job-listing .label {
       text-transform: uppercase;
       color: grey; }
-    /* line 275, /vagrant/app/styles/about.sass */
+    /* line 301, /vagrant/app/styles/about.sass */
     #about-view #jobs #jobs-row .job-listing a.job-link {
       width: 170px;
       bottom: 45px;
       position: absolute;
       left: 50%;
       margin-left: -85px; }
-    /* line 282, /vagrant/app/styles/about.sass */
+    /* line 308, /vagrant/app/styles/about.sass */
     #about-view #jobs #jobs-row .job-listing p {
       margin-top: 15px; }
-  /* line 285, /vagrant/app/styles/about.sass */
+  /* line 311, /vagrant/app/styles/about.sass */
   #about-view #files {
     padding: 30px 0;
     margin-top: 50px;
     border: thin solid gray;
     border-radius: 8px; }
-    /* line 290, /vagrant/app/styles/about.sass */
+    /* line 316, /vagrant/app/styles/about.sass */
     #about-view #files .label {
       color: black;
       display: block; }
-    /* line 293, /vagrant/app/styles/about.sass */
+    /* line 319, /vagrant/app/styles/about.sass */
     #about-view #files #screenshots {
       text-align: center; }
-      /* line 296, /vagrant/app/styles/about.sass */
+      /* line 322, /vagrant/app/styles/about.sass */
       #about-view #files #screenshots #screenshot-grid img {
         display: inline-block;
         margin: 6.5px; }
-    /* line 300, /vagrant/app/styles/about.sass */
+    /* line 326, /vagrant/app/styles/about.sass */
     #about-view #files #downloads-container {
       position: relative;
       height: 250px; }
-      /* line 303, /vagrant/app/styles/about.sass */
+      /* line 329, /vagrant/app/styles/about.sass */
       #about-view #files #downloads-container #downloads {
         margin: 20px auto 0;
         width: 260px; }
-        /* line 307, /vagrant/app/styles/about.sass */
+        /* line 333, /vagrant/app/styles/about.sass */
         #about-view #files #downloads-container #downloads ul {
           width: 260px;
           margin-top: 10px;
           margin-bottom: 20px;
           margin-left: -25px; }
-        /* line 312, /vagrant/app/styles/about.sass */
+        /* line 338, /vagrant/app/styles/about.sass */
         #about-view #files #downloads-container #downloads a {
           color: black; }
-        /* line 314, /vagrant/app/styles/about.sass */
+        /* line 340, /vagrant/app/styles/about.sass */
         #about-view #files #downloads-container #downloads #download-button {
           margin: 0 auto;
           color: #0E4C60; }
-          /* line 317, /vagrant/app/styles/about.sass */
+          /* line 343, /vagrant/app/styles/about.sass */
           #about-view #files #downloads-container #downloads #download-button .glyphicon-download-alt {
             margin-right: 15px;
             vertical-align: middle;
             font-size: 1.5em; }
-  /* line 323, /vagrant/app/styles/about.sass */
+  /* line 349, /vagrant/app/styles/about.sass */
   #about-view #screenshot-lightbox .modal-dialog {
     width: auto;
     max-width: 1024px; }
-  /* line 327, /vagrant/app/styles/about.sass */
+  /* line 353, /vagrant/app/styles/about.sass */
   #about-view #location {
     margin-top: 75px;
     margin-bottom: 100px;
     text-align: center; }
-    /* line 331, /vagrant/app/styles/about.sass */
+    /* line 357, /vagrant/app/styles/about.sass */
     #about-view #location p b {
       margin-top: 40px; }
-    /* line 333, /vagrant/app/styles/about.sass */
+    /* line 359, /vagrant/app/styles/about.sass */
     #about-view #location a {
       color: inherit;
       text-decoration: underline; }
-    /* line 336, /vagrant/app/styles/about.sass */
+    /* line 362, /vagrant/app/styles/about.sass */
     #about-view #location iframe {
       border: 2px solid lightgray; }
 
-/* line 339, /vagrant/app/styles/about.sass */
+/* line 365, /vagrant/app/styles/about.sass */
 .anchor::before {
   content: "";
   display: block;
@@ -14340,7 +14369,7 @@ body:not(.picoctf) .picoctf-show {
 #community-view .half-width {
   width: 50%;
   height: 175px;
-  float: left; }
+  margin: auto; }
 
 /* line 17, /vagrant/app/styles/community.sass */
 #community-view .logo-row {
@@ -19341,7 +19370,7 @@ body[lang='pt-PT'] #subscribe-modal .parent-button {
         background-position: -480px 0px; }
       /* line 406, /vagrant/app/styles/play/campaign-view.sass */
       #campaign-view .game-controls .btn.poll {
-        background-position: -320px 0px; }
+        background-position: -480px 0px; }
     /* line 409, /vagrant/app/styles/play/campaign-view.sass */
     #campaign-view .game-controls .tooltip {
       font-size: 24px; }
